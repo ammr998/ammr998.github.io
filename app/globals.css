@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-moving {
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cursor styles */
+* {
+  cursor: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  .cursor {
+    display: none !important;
+  }
+}
+
